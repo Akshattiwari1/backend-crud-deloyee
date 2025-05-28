@@ -7,6 +7,13 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// Root route
+app.get('/', (req, res) => {
+  res.send('API is running');
+});
+
+// Users API
 app.use('/api/users', usersRoute);
 
 const PORT = process.env.PORT || 5000;
